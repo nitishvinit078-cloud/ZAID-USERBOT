@@ -2,29 +2,36 @@ import os
 from os import getenv
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
-API_ID = int(6435225) #optional
-API_HASH = "4e984ea35f854762dcde906dce426c2d" #optional
+API_ID = int(getenv("API_ID", 0))  # optional
+API_HASH = getenv("API_HASH", "")  # optional
 
-SUDO_USERS = list(map(int, ("").split()))
-OWNER_ID = int(1234567890)
-MONGO_URL = "MONGO_URL"
-BOT_TOKEN = "BOT_TOKEN"
-ALIVE_PIC = 'https://telegra.ph/file/3c52a01057865f7511168.jpg'
-ALIVE_TEXT = None
-PM_LOGGER = None
-LOG_GROUP = None
-GIT_TOKEN = None #personal access token
-REPO_URL = "https://github.com/ITZ-ZAID/ZAID-USERBOT"
-BRANCH = "master" #don't change
- 
-STRING_SESSION1 = ""
-STRING_SESSION2 = ""
-STRING_SESSION3 = ""
-STRING_SESSION4 = ""
-STRING_SESSION5 = ""
-STRING_SESSION6 = ""
-STRING_SESSION7 = ""
-STRING_SESSION8 = ""
-STRING_SESSION9 = ""
-STRING_SESSION10 = ""
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "").split()))
+OWNER_ID = int(getenv("OWNER_ID", 0))
+
+MONGO_URL = getenv("MONGO_URL", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "")
+
+ALIVE_PIC = getenv("ALIVE_PIC", "https://telegra.ph/file/3c52a01057865f7511168.jpg")
+ALIVE_TEXT = getenv("ALIVE_TEXT", None)
+
+PM_LOGGER = getenv("PM_LOGGER", None)
+LOG_GROUP = getenv("LOG_GROUP", None)
+
+GIT_TOKEN = getenv("GIT_TOKEN", None)  # personal access token
+REPO_URL = getenv("REPO_URL", "https://github.com/ITZ-ZAID/ZAID-USERBOT")
+BRANCH = getenv("BRANCH", "master")
+
+# String sessions (for multiple accounts if needed)
+STRING_SESSION1 = getenv("STRING_SESSION1", "")
+STRING_SESSION2 = getenv("STRING_SESSION2", "")
+STRING_SESSION3 = getenv("STRING_SESSION3", "")
+STRING_SESSION4 = getenv("STRING_SESSION4", "")
+STRING_SESSION5 = getenv("STRING_SESSION5", "")
+STRING_SESSION6 = getenv("STRING_SESSION6", "")
+STRING_SESSION7 = getenv("STRING_SESSION7", "")
+STRING_SESSION8 = getenv("STRING_SESSION8", "")
+STRING_SESSION9 = getenv("STRING_SESSION9", "")
+STRING_SESSION10 = getenv("STRING_SESSION10", "")
